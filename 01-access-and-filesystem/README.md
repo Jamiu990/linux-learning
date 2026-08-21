@@ -34,7 +34,7 @@ From Windows Command Prompt, I can connect to a Linux machine using (I already h
 
 ```bash
 
-ssh -l username ip\_address
+ssh -l username ipaddress
 ```
 
 ## 2. The Root User
@@ -86,6 +86,7 @@ pwd
 Lists files and directories.
 
 ```bash
+
 ls
 
 ```
