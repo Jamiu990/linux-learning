@@ -102,7 +102,7 @@ Some important directories include:
 
 
 
-\### `pwd`
+`pwd`
 
 
 
@@ -116,7 +116,7 @@ pwd
 ```
 
 
-### `ls`
+`ls`
 
 
 Lists files and directories.
@@ -129,7 +129,7 @@ ls
 
 
 
-\### `cd`
+`cd`
 
 
 
