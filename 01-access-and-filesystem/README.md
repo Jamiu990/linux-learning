@@ -101,8 +101,6 @@ Some important directories include:
 
 
 
-
-
 \### `pwd`
 
 
@@ -120,6 +118,7 @@ pwd
 ### `ls`
 
 
+
 Lists files and directories.
 
 
@@ -127,8 +126,6 @@ Lists files and directories.
 ls
 
 ```
-
-
 
 
 
