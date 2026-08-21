@@ -101,6 +101,8 @@ Some important directories include:
 
 
 
+
+
 \### `pwd`
 
 
@@ -128,6 +130,8 @@ ls
 
 
 
+
+
 \### `cd`
 
 
@@ -141,6 +145,8 @@ Navigates from one directory to another.
 cd /home
 
 ```
+
+
 
 
 
