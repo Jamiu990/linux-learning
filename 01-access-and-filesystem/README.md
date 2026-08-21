@@ -1,4 +1,4 @@
-\## Linux Access and Filesystem
+\# Linux Access and Filesystem
 
 
 
@@ -10,27 +10,27 @@ This directory contains my notes and practical exercises from my Linux learning 
 
 
 
-\- `Accessing a Linux system`
+\- Accessing a Linux system
 
-\- `SSH`
+\- SSH
 
-\- `Linux users`
+\- Linux users
 
-\- `The root user`
+\- The root user
 
-\- `Changing passwords`
+\- Changing passwords
 
-\- `Linux filesystem`
+\- Linux filesystem
 
-\- `Filesystem structure`
+\- Filesystem structure
 
-\- `Filesystem types`
+\- Filesystem types
 
-\- `Directory properties`
+\- Directory properties
 
-\- `Absolute and relative paths`
+\- Absolute and relative paths
 
-\- `Basic filesystem navigation`
+\- Basic filesystem navigation
 
 ## 1. Accessing a Linux System
 
@@ -101,7 +101,7 @@ Some important directories include:
 
 
 
-`pwd`
+\### `pwd`
 
 
 
@@ -115,7 +115,7 @@ pwd
 ```
 
 
-`ls`
+### `ls`
 
 
 Lists files and directories.
@@ -128,7 +128,11 @@ ls
 
 
 
-`cd`
+\### `cd`
+
+
+
+Navigates from one directory to another.
 
 
 
