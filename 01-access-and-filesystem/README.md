@@ -1,14 +1,8 @@
-\# Linux Access and Filesystem
-
-
+# Linux Access and Filesystem
 
 This directory contains my notes and practical exercises from my Linux learning journey.
 
-
-
-\## Topics Covered
-
-
+## Topics Covered
 
 \- Accessing a Linux system
 
@@ -34,39 +28,24 @@ This directory contains my notes and practical exercises from my Linux learning 
 
 ## 1. Accessing a Linux System
 
-
-
 I learned how to access a Linux machine remotely using SSH.
-
-
 
 From Windows Command Prompt, I can connect to a Linux machine using (I already had SSH configured on my laptop, so I did not need to install PuTTY):
 
-
-
 ```bash
 
-ssh -l username ip\_address
+ssh -l username ipaddress
 ```
 
 ## 2. The Root User
 
-
-
 The root user is the superuser in Linux.
-
-
 
 The root account has extensive privileges over the system.
 
-
 ## 3. Changing a Password
 
-
-
 The `passwd` command can be used to change a user's password.
-
-
 
 ```bash
 
@@ -75,15 +54,9 @@ passwd
 
 ## 4. Linux Filesystem
 
-
-
 I learned about the structure of the Linux filesystem and how files and directories are organized.
 
-
-
 Some important directories include:
-
-
 
 \- `/`
 
@@ -99,43 +72,28 @@ Some important directories include:
 
 ## 5. Basic Navigation Commands
 
-
-
-\### `pwd`
-
-
+### `pwd`
 
 Displays the current working directory.
-
-
 
 ```bash
 
 pwd
 ```
 
-
 ### `ls`
-
-
 
 Lists files and directories.
 
-
 ```bash
+
 ls
 
 ```
 
-
-
-\### `cd`
-
-
+### `cd`
 
 Navigates from one directory to another.
-
-
 
 ```bash
 
@@ -143,21 +101,11 @@ cd /home
 
 ```
 
-
-
-
-
-\## 6. Absolute and Relative Paths
-
-
+## 6. Absolute and Relative Paths
 
 An absolute path starts from the root directory.
 
-
-
 Example:
-
-
 
 ```bash
 
@@ -165,15 +113,9 @@ Example:
 
 ```
 
-
-
 A relative path is based on the current working directory.
 
-
-
 Example:
-
-
 
 ```bash
 
