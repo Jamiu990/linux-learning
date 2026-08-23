@@ -435,7 +435,7 @@ If the target of a symbolic link is removed or renamed, the symbolic link can be
 
 | Feature | Hard Link | Soft Link |
 | --- | --- | --- |
-| Command| ln | ln -s |
+| Command| `ln` | `ln -s` |
 | Refers to | Same inode | Target path |
 | Can become broken if target is renamed/deleted? | No, if another hard link remains | Yes |
 | Can normally cross filesystems? | No | Yes |
