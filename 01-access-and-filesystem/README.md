@@ -4,27 +4,17 @@ This directory contains my notes and practical exercises from my Linux learning 
 
 ## Topics Covered
 
-\- Accessing a Linux system
-
-\- SSH
-
-\- Linux users
-
-\- The root user
-
-\- Changing passwords
-
-\- Linux filesystem
-
-\- Filesystem structure
-
-\- Filesystem types
-
-\- Directory properties
-
-\- Absolute and relative paths
-
-\- Basic filesystem navigation
+- Accessing a Linux system
+- SSH
+- Linux users
+- The root user
+- Changing passwords
+- Linux filesystem
+- Filesystem structure
+- Filesystem types
+- Directory properties
+- Absolute and relative paths
+- Basic filesystem navigation
 
 ## 1. Accessing a Linux System
 
@@ -33,7 +23,6 @@ I learned how to access a Linux machine remotely using SSH.
 From Windows Command Prompt, I can connect to a Linux machine using (I already had SSH configured on my laptop, so I did not need to install PuTTY):
 
 ```bash
-
 ssh -l username ipaddress
 ```
 
@@ -45,11 +34,24 @@ The root account has extensive privileges over the system.
 
 ## 3. Changing a Password
 
-The `passwd` command can be used to change a user's password.
+### The `passwd` command can be used to change a user's password.
 
 ```bash
-
 passwd
+```
+**Note**: This changes your root password if you're logged in as `root`.
+
+### To change a specific user's password, run:
+
+```bash
+passwd username
+```
+**Note**: You must be logged in as root to run this command.
+
+### To change the `root` password from a regular account, run: 
+
+```bash
+sudo passwd root
 ```
 
 ## 4. Linux Filesystem
@@ -58,17 +60,12 @@ I learned about the structure of the Linux filesystem and how files and director
 
 Some important directories include:
 
-\- `/`
-
-\- `/home`
-
-\- `/etc`
-
-\- `/var`
-
-\- `/tmp`
-
-\- `/usr`
+- `/`
+- `/home`
+- `/etc`
+- `/var`
+- `/tmp`
+- `/usr`
 
 ## 5. Basic Navigation Commands
 
@@ -77,7 +74,6 @@ Some important directories include:
 Displays the current working directory.
 
 ```bash
-
 pwd
 ```
 
@@ -86,9 +82,7 @@ pwd
 Lists files and directories.
 
 ```bash
-
 ls
-
 ```
 
 ### `cd`
@@ -96,9 +90,7 @@ ls
 Navigates from one directory to another.
 
 ```bash
-
 cd /home
-
 ```
 
 ## 6. Absolute and Relative Paths
@@ -108,9 +100,7 @@ An absolute path starts from the root directory.
 Example:
 
 ```bash
-
 /home/user/Documents
-
 ```
 
 A relative path is based on the current working directory.
@@ -118,10 +108,5 @@ A relative path is based on the current working directory.
 Example:
 
 ```bash
-
 Documents
-
 ```
-
-
-
