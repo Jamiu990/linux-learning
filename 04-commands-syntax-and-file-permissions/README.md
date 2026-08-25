@@ -1,6 +1,6 @@
-# Command Syntax
+# Command Syntax and File Permissions
 
-This directory contains my notes and practical examples from the first part of Day 4 of my Linux learning journey.
+This directory contains my complete notes and practical examples from the first part of Day 4 of my Linux learning journey.
 
 ## Topics Covered
 
@@ -12,6 +12,12 @@ This directory contains my notes and practical examples from the first part of D
 - Command arguments in practice
 - `rm` options
 - `man` command
+- Linux file permissions
+- Permission levels
+- Reading permissions with `ls -l`
+- Changing permissions with `chmod`
+- File permissions vs. directory permissions
+
 
 ## 1. Command Syntax
 
@@ -193,34 +199,257 @@ The manual pages are useful for learning about:
 - Available features
 - Examples and explanations
 
-## Key Commands Learned
 
-| **Command** | **Purpose** |
+## 8. Linux as a Multi-User System
+
+UNIX/Linux is designed as a multi-user system.
+
+Files and directories can be protected from or made accessible to other users by changing their permissions.
+
+Users are responsible for controlling access to the files and directories they own.
+
+## 9. Types of Permissions
+
+There are three basic permission types:
+
+| **Permission** | **Symbol** | **Meaning** |
+| --- | --- | --- |
+| Read | `r` | Permission to read the contents |
+| Write | `w` | Permission to modify the contents |
+| Execute | `x` | Permission to execute a file or, for a directory, access/traverse it |
+
+For an executable program, the `x` permission allows an authorized user to run it.
+
+## 10 . Permission Levels
+
+Each permission can be assigned to three different classes of users:
+
+| Symbol | Meaning |
 | --- | --- |
-| ls | Lists directory contents |
-| ls -l | Lists contents in long format |
-| ls -lt | Lists in long format, sorted by modification time |
-| ls -ltr | Lists in long format with reverse time sorting |
-| rm -f | Forcefully removes a file |
-| rm -r | Recursively removes a directory and its contents |
-| man | Displays a command's manual |
+| `u` | User/owner |
+| `g` | Group |
+| `o` | Others |
+
+There is also:
+`a`
+which represents all users (`u`, `g`, and `o`).
+
+## 11. Understanding `ls -l` Permissions
+
+File and directory permissions can be viewed using:
+
+```bash
+ls -l
+```
+
+A typical permission string might look like:
+
+`-rwxrwxrwx`
+
+The first character indicates the file type.
+
+Here:
+
+`-`
+
+means the entry is a regular file.
+
+The remaining nine characters are divided into three groups:
+
+`-rwx rwx rwx`
+
+They represent:
+
+user   group   others
+
+Each group contains:
+
+`rwx`
+
+So in:
+
+`-rwxrwxrwx`
+
+the owner has:
+
+`rwx`
+
+the group has:
+
+`rwx`
+
+and others have:
+
+`rwx`
+
+This means all three classes have read, write, and execute permissions.
+
+## 12. The `chmod` Command
+
+The `chmod` command is used to change file and directory permissions.
+
+The manual can be viewed with:
+
+```bash
+man chmod
+```
+
+Permissions can be added or removed using symbolic notation.
+
+## 13. Removing Permissions
+
+Remove write permission from the group
+
+```bash
+chmod g-w anime
+```
+
+This removes the write permission from the group for the file anime.
+
+Remove read permission from everyone
+
+```bash
+chmod a-r anime
+``
+
+This removes read permission for the user, group, and others.
+
+Remove write permission from the owner
+
+```bash
+chmod u-w anime
+```
+
+This removes the owner's write permission.
 
 
-## Key Concept
+## 14. Adding Permissions
 
-A useful way to understand Linux commands is:
+Give the owner read and write permissions
 
-`command → option(s) → argument(s)`
+```bash
+chmod u+rw anime
+```
+
+This adds read and write permissions for the owner.
+
+Give the group read and write permissions
+
+```bash
+chmod g+rw anime
+```
+
+This adds read and write permissions for the group.
+
+Give others read permission
+
+```bash
+chmod o+r anime
+```
+
+This adds read permission for other users.
+
+
+## 15. chmod on Files and Directories
+
+The chmod command can be used to change permissions on files and directories.
 
 For example:
 
 ```bash
-ls -l /home
+chmod g-w anime
 ```
 
-`ls`     → command
-`-l`     → option
-`/home`  → argument
+changes permissions on the file anime.
 
-Not every command requires all three components. The exact syntax depends on the command being used.
+Permissions can also be changed on a directory:
+
+```bash
+chmod a-x Quant/
+```
+
+## 16. Execute Permission on Directories
+
+The meaning of x depends on whether the filesystem object is a file or a directory.
+
+For a regular file:
+
+x = execute
+
+For a directory:
+
+x = permission to enter/traverse the directory
+
+For example:
+
+```bash
+chmod a-x Quant/
+```
+
+removes the execute/traverse permission from all users for the Quant directory.
+
+Users without the necessary execute permission may not be able to enter the directory using:
+
+```bash
+cd Quant/
+```
+
+The permission can be restored with:
+
+```bash
+chmod a+x Quant/
+```
+
+## Key Command Learned
+
+| Command | Purpose |
+| --- | --- |
+| `ls` | Lists directory contents |
+| `ls -l` | Displays detailed file information |
+| `ls -lt` | Sorts by modification time |
+| `ls -ltr` | Reverses modification-time sorting |
+| `rm -f` | Forcefully removes a file |
+| `rm -r` | Recursively removes a directory |
+| `man` | Opens a command's manual |
+| `chmod` | Changes file or directory permissions |
+| `chmod g-w` | Removes group write permission |
+| `chmod a-r` | Removes read permission for all |
+| `chmod u-w` | Removes owner write permission |
+| `chmod u+rw` | Adds owner read/write permissions |
+| `chmod g+rw` | Adds group read/write permissions |
+| `chmod o+r` | Adds read permission for others |
+| `chmod a-x` | Removes execute/traverse permission for all |
+| `chmod a+x` | Adds execute/traverse permission for all |
+
+
+## Key Concepts
+
+A Linux command can generally be understood as:
+
+command → option(s) → argument(s)
+
+File permissions can be understood as:
+
+permission type
+      ↓
+r = read
+w = write
+x = execute/traverse
+
+permission class
+      ↓
+u = user
+g = group
+o = others
+a = all
+
+For example:
+
+-rwxrwxrwx
+ │   │   │
+ │   │   └── others
+ │   └────── group
+ └────────── user
+
+Understanding these concepts is important because Linux uses permissions to control who can access and modify files and directories.
 
