@@ -36,9 +36,8 @@ Both commands result in:
 The three numeric digits correspond to:
 
 ```text
-| User | Group | Others |
-| --- | --- | --- |
-| 4 | 4 | 4 | 
+User Group Others
+4      4     4  
 ```
 
 Therefore:
@@ -115,9 +114,8 @@ chmod 764 FILE
 The three digits represent permissions for:
 
 ```text
-| User | Group | Others |
-| --- | --- | --- |
-| 7 | 6 | 4 |
+User Group Others
+7      6     4
 ```
 
 ### `7` — User
@@ -174,10 +172,9 @@ The complete permission representation is:
 A numeric permission is normally written using three digits:
 
 ```text
-   | 7 | 6 | 4 |
-   | --- | --- | --- |
-   | ↓ | ↓ | ↓ |
-   | User | Group | Others |
+   7        6       4 
+   ↓        ↓       ↓ 
+   User   Group   Others
 ```
 
 Each digit independently defines the permissions for that user class.
