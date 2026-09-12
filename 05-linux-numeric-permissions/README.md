@@ -207,7 +207,7 @@ Others → 4 → r--
 7 = rwx
 ```
 
-### Example
+### Example 1
 
 ```bash
 chmod 764 FILE
@@ -226,6 +226,30 @@ User   = rwx
 Group  = rw-
 Others = r--
 ```
+
+### Example 2
+
+```bash
+touch sample
+chmod 764 sample
+```
+
+This changes the permissions on ```sample```
+
+- The ```user``` receives 7 (rwx permissions)
+- The ```group``` receives 6 (rw permissions)
+- ```Others``` receives 4 (r permission)
+
+
+### Example 3
+
+```bash
+chmod 700 sample
+```
+
+- The ```user``` receives 7 (rwx permissions)
+- The ```group``` receives 0 (no permission)
+- ```Others``` receives 0 (no permission)
 
 
 ## Key Takeaway
