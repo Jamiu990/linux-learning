@@ -102,7 +102,7 @@ The original line remains, and the new line is added below it.
 ### Difference Between `>` and `>>`
 
 | Operator | Function | Effect on Existing Contents |
-||||
+|---|---|---|
 | `>` | Redirects output to a file | Replaces existing contents |
 | `>>` | Appends output to a file | Preserves existing contents and adds new output |
 
@@ -289,7 +289,7 @@ This appends the note to `notes.txt` without replacing its existing contents.
 ## 7. Quick Reference
 
 | Command | Purpose |
-|||
+|---|---|
 | `vi anime` | Open or create a file for editing |
 | `echo "text" > file.txt` | Write text, replacing existing contents |
 | `echo "text" >> file.txt` | Append text to a file |
